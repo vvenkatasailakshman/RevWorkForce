@@ -1,0 +1,14 @@
+# Compiled files
+bin/
+*.class
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Build files
+sources.txt
+
+# Security - DO NOT COMMIT!
+db.properties
