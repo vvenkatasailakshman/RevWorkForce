@@ -1,112 +1,205 @@
-# RevWorkForce – HR Management System
+# 💼 RevWorkForce – HR Management System  
 
-RevWorkForce is a console-based Human Resource Management (HRM) application developed using Java and MySQL. 
-The system helps organizations manage employees, departments, leave requests, and performance reviews 
-through a role-based access model.
-
----
-
-## Project Overview
-
-The application supports three main roles:
-- Employee
-- Manager
-- Admin
-
-Each role has specific permissions to ensure secure and structured workflow within the system.
+RevWorkForce is a console-based Human Resource Management (HRM) application developed using **Java and MySQL**.  
+It helps organizations manage employees, departments, leave requests, attendance, and performance reviews using a **secure role-based access system**.
 
 ---
 
-## Features
+## 📌 Project Overview  
+RevWorkForce streamlines HR operations through structured workflows and role-based permissions.
 
-- Employee registration and login
-- Role-based access control (Employee, Manager, Admin)
-- Department-wise employee management
-- Leave application and approval workflow
-- Performance review and rating system
-- Attendance tracking support
-- Logging and exception handling
+👥 **Supported Roles**  
+- 👨‍💼 Employee  
+- 🧑‍💻 Manager  
+- 🛡️ Admin  
 
----
-
-## Technologies Used
-
-- Java 17 (OpenJDK)
-- JDBC
-- MySQL
-- Log4j / Java Logger
-- Git and GitHub
+Each role has specific permissions to ensure **security and proper workflow**.
 
 ---
 
-## Project Structure
+## ✨ Features  
 
-com.revworkforce  
-├── model  
-├── dao  
-├── service  
-├── util  
-└── main  
+🔐 **Authentication & Roles**
+- Employee registration and login  
+- Role-based access control (Employee, Manager, Admin)  
 
----
+🏢 **Employee & Department Management**
+- Department-wise employee management  
+- Admin controls employee records  
 
-## Database Design
+📅 **Leave Management**
+- Apply for leave  
+- Leave approval/rejection workflow  
+- Track leave status  
 
-The project uses a relational database designed using an ER diagram with the following entities:
-- Employee
-- Department
-- Leave_Request
-- Performance_Review
-- Attendance
+⭐ **Performance Management**
+- Performance review system  
+- Employee rating by manager  
 
-Relationships are maintained using primary and foreign keys to ensure data integrity.
+⏱️ **Attendance**
+- Attendance tracking support  
 
----
-
-## How to Run the Project
-
-1. Install Java 17 and MySQL
-2. Clone the project repository
-3. Create the required database in MySQL
-4. Update database credentials in DB connection utility
-5. Run the main application class
-6. Interact with the system using console menus
+🧾 **System Utilities**
+- Logging using Log4j / Java Logger  
+- Exception handling  
+- Structured layered architecture  
 
 ---
 
-## User Roles
+## 🛠️ Technologies Used  
 
-Employee:
-- Apply for leave
-- View leave status
-- View personal details
-
-Manager:
-- Approve or reject leave requests
-- Perform employee performance reviews
-
-Admin:
-- Manage employees and departments
-- Full system access
+- ☕ Java 17 (OpenJDK)  
+- 🔗 JDBC  
+- 🛢️ MySQL  
+- 📜 Log4j / Java Logger  
+- 🌐 Git & GitHub  
 
 ---
 
-## Future Enhancements
+## 🏗️ System Architecture  
 
-- Web-based interface
-- Spring Boot integration
-- Authentication using JWT
-- Email notifications
-- Advanced reporting dashboard
+The project follows a **layered architecture** for better maintainability and scalability.
+
+### 🔹 Architecture Layers  
+
+📦 **Model Layer**
+- Contains entity classes (Employee, Department, Leave, etc.)
+
+🗄️ **DAO Layer**
+- Handles database operations using JDBC  
+- CRUD operations  
+
+⚙️ **Service Layer**
+- Business logic implementation  
+- Role-based validations  
+
+🧰 **Utility Layer**
+- Database connection  
+- Logger setup  
+- Helper functions  
+
+🚀 **Main Layer**
+- Console UI  
+- Menu-driven interaction  
+
+### 📂 Project Structure
+com.revworkforce
+├── model 📦 Entity classes
+├── dao 🗄️ Database operations
+├── service ⚙️ Business logic
+├── util 🧰 Utilities & DB connection
+└── main 🚀 Main console app
 
 ---
 
-## Author
+## 🗃️ Database Design (ER Diagram)
 
-Venkata Sai Lakshman Viswanadhapalli
+The system uses a relational database with proper primary and foreign key relationships.
+
+### 📊 Entities  
+
+👤 **Employee**
+- emp_id (PK)  
+- name  
+- email  
+- role  
+- dept_id (FK)  
+
+🏢 **Department**
+- dept_id (PK)  
+- dept_name  
+
+📝 **Leave_Request**
+- leave_id (PK)  
+- emp_id (FK)  
+- leave_type  
+- status  
+
+⭐ **Performance_Review**
+- review_id (PK)  
+- emp_id (FK)  
+- rating  
+- comments  
+
+⏱️ **Attendance**
+- attendance_id (PK)  
+- emp_id (FK)  
+- date  
+- status  
+
+### 🔗 Relationships  
+- One Department → Many Employees  
+- One Employee → Many Leave Requests  
+- One Employee → Many Reviews  
+- One Employee → Attendance Records  
+
+Ensures **data integrity using primary & foreign keys**.
 
 ---
 
-## License
+## 📑 SRS (Software Requirements Specification)
 
-This project is created for learning and academic purposes.
+### 🎯 Functional Requirements  
+✔ Employee registration & login  
+✔ Role-based access control  
+✔ Manage employees & departments  
+✔ Apply & approve leave  
+✔ Performance review system  
+✔ Attendance tracking  
+✔ Console-based navigation  
+
+### ⚡ Non-Functional Requirements  
+🔒 Security – Role-based access  
+⚡ Performance – Fast JDBC operations  
+🧩 Maintainability – Layered architecture  
+📈 Scalability – Can extend to web app  
+🛠️ Reliability – Exception handling & logging  
+
+---
+
+## ▶️ How to Run the Project  
+
+1️⃣ Install Java 17 and MySQL  
+2️⃣ Clone repository from GitHub  
+3️⃣ Create database in MySQL  
+4️⃣ Update DB credentials in connection file  
+5️⃣ Run main class  
+6️⃣ Use console menu to interact  
+
+---
+
+## 👥 User Roles & Permissions  
+
+### 👨‍💼 Employee  
+- Apply for leave  
+- View leave status  
+- View personal details  
+
+### 🧑‍💻 Manager  
+- Approve/reject leave  
+- Give performance reviews  
+
+### 🛡️ Admin  
+- Manage employees  
+- Manage departments  
+- Full system access  
+
+---
+
+## 🚀 Future Enhancements  
+
+🌐 Web-based interface (Spring Boot + React)  
+🔐 JWT Authentication  
+📧 Email notifications  
+📊 Reporting dashboard  
+☁️ Cloud database integration  
+
+---
+
+## 👨‍💻 Author  
+**Venkata Sai Lakshman Viswanadhapalli**
+
+---
+
+## 📜 License  
+This project is created for **learning and academic purposes**.
